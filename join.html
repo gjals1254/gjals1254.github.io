@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입창</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f7;
+    margin: 0;
+    padding: 0;
+}
+
+#join_wrap {
+    width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.joinTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.joinTable th {
+    width: 150px;
+    text-align: left;
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.joinTable td {
+    padding: 10px 0;
+}
+
+.textForm {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.textForm:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.btn {
+    margin-left: 10px;
+    padding: 7px 10px;
+    border: none;
+    background-color: #6c757d;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #5a6268;
+}
+
+.btn_area {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn_area button {
+    width: 120px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+button[type="reset"]:hover {
+    background-color: #c82333;
+}
+
+.btn_join {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn_join:hover {
+    background-color: #0056b3;
+}
+
+textarea.textForm {
+    height: 80px;
+    resize: none;
+}
+.id_row {
+    display: flex;
+    gap: 10px;
+}
+
+.id_row .textForm {
+    flex: 1; /* 남는 공간 다 차지 */
+}
+
+.id_row .btn {
+    white-space: nowrap;
+}
+    </style>
+    
+</head>
+<body>
+    <div id="join_wrap">
+        <h1>회원가입</h1>
+        <form name="" method="get" action="aaa.html">
+            <fieldset>
+                 <legend class="title">* 필수입력정보</legend>  
+                 <table class="joinTable">
+                    <caption>회원가입 필수 입력표</caption>
+                    <tr>
+                        <th class="first"><label for="user_id">아이디</label></th>
+                        <td class="first">
+                    <div class="id_row">
+                        <input type="text" id="user_id" class="textForm" required autofocus>
+                        <input type="button" value="중복확인" class="btn">
+                    </div>
+                </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_pwd">비밀번호</label></th>
+                        <td><input type="password" id="user_pwd" class="textForm" placeholder="10자이상의 영문과 숫자 조합"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_name">이름</label></th>
+                        <td><input type="text" id="user_name" class="textForm"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_tel">연락처</label></th>
+                        <td><input type="tel" id="user_tel" class="textForm"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="user_email">이메일</label></th>
+                        <td><input type="email" id="user_email" class="textForm"></td>
+                    </tr>
+                    <tr>
+                        <th>전자우편신청</th>
+                        <td><input type="radio" name="mail" checked id="mail_yes">
+                            <label for="mail_yes">예 신청합니다.</label>
+                            <input type="radio" name="mail" id="mail_no">
+                            <label for="mail_no">아니오 신청하지 않습니다.</label>
+                        </td>
+                    </tr>
+                 </table> 
+            </fieldset>
+            <br/>
+            <fieldset>
+                <legend class="title">* 선택입력정보</legend>
+                <table class="joinTable">
+                    <caption>회원가입 선택 입력표</caption>
+                    <tr>
+                        <th class="first">프로필사진</th>
+                        <td class="first"><input type="file"></td>
+                    </tr>
+                    <tr>
+                        <th>생년월일</th>
+                        <td><input type="date" class="textForm"></td>
+                    </tr>
+                    <tr>
+                        <th>성별</th>
+                        <td><input type="radio" name="gender" id="male">
+                            <label for="male">남</label>
+                            <input type="radio" name="gender" id="female">
+                            <label for="female">여</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>직업</th>
+                        <td>
+                            <select name="user_job" class="textForm">
+                                <option>회사원</option>
+                                <option>기술자</option>
+                              <option selected>학생</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>자기소개</th>
+                        <td> <textarea name="user_intro" class="textForm"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div class="btn_area">
+                <button type="reset">취소</button>
+                <button type="submit" class="btn_join">회원가입</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
